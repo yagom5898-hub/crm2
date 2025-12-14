@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRM Simples</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>CRM Simples</h1>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Cadastro de Clientes</h2>
+      <form id="customer-form">
+        <div class="grid">
+          <label>
+            Nome
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Telefone
+            <input type="text" name="phone" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email">
+          </label>
+          <label>
+            Serviço principal
+            <input type="text" name="service_main" required>
+          </label>
+        </div>
+        <label>
+          Observações
+          <textarea name="notes" rows="3"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit">Salvar</button>
+          <button type="reset" class="secondary">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Clientes</h2>
+      <div class="list-actions">
+        <input id="search" type="text" placeholder="Buscar por nome ou telefone">
+        <button id="refresh" class="secondary">Atualizar</button>
+      </div>
+      <div id="customers-list"></div>
+    </section>
+
+    <section id="attendance-section" class="card hidden">
+      <h2>Histórico de Atendimentos</h2>
+      <div id="selected-customer"></div>
+      <div id="attendances-list"></div>
+      <h3>Novo atendimento</h3>
+      <form id="attendance-form">
+        <div class="grid">
+          <label>
+            Data
+            <input type="date" name="date" required>
+          </label>
+          <label>
+            Serviço realizado
+            <input type="text" name="service" required>
+          </label>
+          <label>
+            Valor
+            <input type="number" name="amount" step="0.01" min="0" required>
+          </label>
+        </div>
+        <label>
+          Observações
+          <textarea name="notes" rows="3"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit">Adicionar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="/script.js"></script>
+</body>
+</html>
