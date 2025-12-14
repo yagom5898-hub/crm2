@@ -1,4 +1,12 @@
 {
-  "framework": "none",
-  "outputDirectory": "."
+  "version": 2,
+  "framework": "express",
+  "functions": {
+    "index.js": {
+      "runtime": "@vercel/node@2.15.7"
+    }
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" }
+  ]
 }
